@@ -1,0 +1,22 @@
+@import 'config';
+@import 'nav';
+@import './home/header';
+@import './home/parallaxHeader';
+@import './home/categories';
+@import 'footer';
+@import './recipe/recipeData';
+@import './signIn/signIn';
+@import './signUp/signUp';
+@import './search/search';
+@import './profile/profile';
+@import './profile/myRecipes';
+@import './search/allRecipes';
+@import './swiper';
+@import './subHeader';
+@import './authentication';
+@import './home/nextLevel';
+@import './loader';
+@import './addRecipe/addRecipe';
+@import './createProfile/createProfile';
+@import './editRecipe/editRecipe';
+

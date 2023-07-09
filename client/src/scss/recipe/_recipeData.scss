@@ -1,0 +1,271 @@
+.recipe {
+  &__title {
+    h1 {
+      font-size: 44px;
+      @include secondFont;
+      color: $primary-color;
+      word-break: break-all;
+
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+
+      @media (max-width: 420px) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__main-image {
+    position: relative;
+    padding-top: 30px;
+    img {
+      height: 600px;
+      object-fit: cover;
+
+      @media (max-width: 768px) {
+        object-fit: contain;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding-top: 10px;
+    }
+  }
+
+  &__date,
+  &__like {
+    position: absolute;
+    background-color: $secondary-color;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $background-color;
+    @include secondFont;
+
+    span {
+      font-size: 18px;
+      line-height: 1;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    #like{
+      @media (max-width: 420px) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__date {
+    flex-direction: column;
+    bottom: 20px;
+    left: 20px;
+
+    @media (max-width: 768px) {
+     display: none;
+    }
+  }
+
+  &__like {
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+
+    span {
+      padding-left: 10px;
+    }
+
+    @media (max-width: 420px) {
+      right: 10px;
+      bottom: 12px;
+    }
+  }
+
+  &__small--blocks {
+    padding: 16px 0;
+    justify-content: start;
+  }
+
+  &__small--block {
+    &:first-child {
+      margin-left: 0;
+    }
+
+    p {
+      @media (max-width: 420px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__desc {
+    width: 100%;
+    display: flex;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--block {
+      padding: 20px 0;
+
+      &:first-child {
+        width: 30%;
+      }
+
+      &:last-child {
+        width: 70%;
+      }
+
+      &:first-child,
+      &:last-child {
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        padding: 20px 0 0 0;
+      }
+    }
+
+    &--title {
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+      position: relative;
+      h4 {
+        font-size: 28px;
+        line-height: 1.4;
+        color: $primary-color;
+        @include secondFont;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 40px;
+          height: 3px;
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  &__ingredients {
+    &--list {
+      &-item {
+        margin-top: 20px;
+        p {
+          color: $other-color;
+          font-size: 18px;
+          @include firstFont;
+
+          @media (max-width: 420px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &__prep {
+    padding-left: 120px;
+
+    @media (max-width: 768px) {
+      padding-left: 0;
+    }
+
+    &--list {
+      &-item {
+        margin-top: 40px;
+        counter-increment: step-counter;
+        @include secondFont;
+
+        &:before {
+          content: counter(step-counter);
+          margin-right: 5px;
+          background-color: $secondary-color;
+          padding: 2px 12px;
+          border-radius: 5px;
+          color: $background-color;
+          font-weight: bold;
+          font-size: 22px;
+        }
+        p {
+          color: $other-color;
+          font-size: 20px;
+          padding-top: 4px;
+
+          @media (max-width: 420px) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .recipe__tags {
+    &--list {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+
+      &-item {
+        margin: 0 8px 10px 0;
+
+        p {
+          background-color: transparent;
+          border: 1px solid $other-color;
+          border-radius: 10px;
+          font-size: 14px;
+          @include firstFont;
+          padding: 6px 20px;
+          width: auto;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .mobile__recipe--date{
+    color: $other-color;
+    font-style: italic;
+    padding: 2px 0;
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.recipe-data-hidden-likes {
+  display: flex;
+
+  @media (max-width: 420px) {
+    display: none;
+  }
+}
+
+@keyframes spin { 
+  100% { 
+      transform:rotate(360deg); 
+  } 
+}
+
+#like-loader{
+  animation:spin 2s linear infinite;
+
+  @media (max-width: 420px) {
+    width: 16px;
+    height: 16px;
+  }
+}

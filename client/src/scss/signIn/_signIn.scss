@@ -1,0 +1,23 @@
+.signin__background {
+  background-image: url("../assets/signinBg.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}

@@ -1,0 +1,238 @@
+.profile__wrapper {
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .profile__block {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      margin-left: 0 !important;
+      margin-top: 16px;
+    }
+
+    &:first-child {
+      @media (max-width: 768px) {
+        margin-top: 0;
+      }
+    }
+
+    &:last-child {
+      width: 100%;
+      align-items: start;
+      margin-left: 60px;
+    }
+
+    &--image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      position: relative;
+      img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        @media (max-width: 420px) {
+          width: 240px;
+          height: 240px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        width: 240px;
+        height: 240px;
+      }
+
+      &-add {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        left: 0;
+        border-radius: 50%;
+        height: 100%;
+        @include transition;
+        @include firstFont;
+        color: $background-color;
+        cursor: pointer;
+
+        &-text {
+          width: 100%;
+          border-radius: 50%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--username {
+      display: flex;
+      align-items: center;
+      @include firstFont;
+      padding-top: 16px;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      p {
+        color: $primary-color;
+        font-size: 22px;
+
+        &:nth-last-child(2) {
+          padding-top: 6px;
+        }
+
+        @media (max-width: 420px) {
+          font-size: 18px;
+        }
+      }
+
+      span {
+        color: $other-color;
+        font-size: 20px;
+
+        &:last-child {
+          padding-top: 6px;
+        }
+
+        @media (max-width: 420px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &--para {
+      padding-bottom: 20px;
+
+      &-title {
+        padding-bottom: 10px;
+        @include secondFont;
+        color: $primary-color;
+
+        h1 {
+          font-size: 28px;
+
+          @media (max-width: 420px) {
+            font-size: 22px;
+          }
+        }
+      }
+
+      &-desc {
+        p {
+          word-break: break-all;
+        }
+      }
+
+      &-email,
+      &-desc {
+        @include firstFont;
+        p {
+          font-size: 18px;
+          color: $other-color;
+
+          @media (max-width: 420px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile__recipes {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+
+  .mobile__open--options {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    input {
+      display: none;
+    }
+
+    label {
+      background-color: $background-color;
+      width: 100%;
+      color: $other-color;
+      border: 2px solid $other-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      @include transition;
+
+      span{
+        padding:10px 0;
+      }
+    }
+
+    input:checked ~ label {
+      background-color:$other-color;
+      color: $background-color;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &--list {
+    display: flex;
+    width: 100%;
+
+    label {
+      width: 100%;
+    }
+
+    input {
+      display: none;
+    }
+
+    &-item {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      @include firstFont;
+      @include transition;
+      color: $primary-color;
+      border: none;
+      padding: 10px 0;
+      border-bottom: 2px solid $secondary-color;
+      cursor: pointer;
+
+      p {
+        font-size: 20px;
+        @media (max-width: 420px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    input:checked ~ li {
+      background-color: $secondary-color;
+      color: $background-color;
+      border-color: $secondary-color;
+    }
+  }
+}

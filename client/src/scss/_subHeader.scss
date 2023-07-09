@@ -1,0 +1,57 @@
+#sub-header {
+    background-image: url("../assets/subheader.webp");
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  
+    .sub-header__title {
+      z-index: 2;
+      color: $background-color;
+      @include secondFont;
+      text-align: center;
+      padding: 0 10px;
+  
+      h1 {
+        font-size: 80px;
+
+        
+        @media (max-width: 768px) {
+          font-size: 70px;
+        }
+
+        @media (max-width: 420px) {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+  
+  .file {
+    display: none;
+  }
+  
+  .backColors {
+    p {
+      background-color: transparent;
+      border-color: $other-color;
+      color: $primary-color;
+    }
+  }
+  

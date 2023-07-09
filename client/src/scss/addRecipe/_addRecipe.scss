@@ -1,0 +1,392 @@
+.add-recipe__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  .add-recipe__blocks--wrapper {
+    display: flex;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .add-recipe__first-block {
+      width: 60%;
+    }
+
+    .add-recipe__second-block {
+      width: 40%;
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .add-recipe__first-block,
+      .add-recipe__second-block {
+        width: 100%;
+      }
+    }
+  }
+
+  .add-recipe__block {
+    &--para {
+      width: 100%;
+      margin-top: 40px;
+
+      &-title {
+        @include secondFont;
+        padding-bottom: 10px;
+
+        h1 {
+          font-size: 28px;
+
+          @media (max-width: 1200px) {
+            font-size: 22px;
+          }
+        }
+      }
+
+      &-input {
+        input {
+          width: 100%;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          border-bottom: 2px solid $secondary-color;
+          @include firstFont;
+          font-size: 18px;
+          height: 40px;
+          color: $other-color;
+
+          @media (max-width: 768px) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &-steps {
+        padding-top: 10px;
+      }
+
+      &-steps-step {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .step__counter {
+        background-color: $secondary-color;
+        padding: 4px 12px;
+        height: 40px;
+        border-radius: 5px;
+        color: $background-color;
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      .step__input {
+        width: 100%;
+        padding: 0 10px;
+        textarea {
+          width: 100%;
+          min-height: 40px;
+          background-color: transparent;
+          outline: none;
+          resize: vertical;
+          border: none;
+          border-bottom: 2px solid $secondary-color;
+          @include firstFont;
+          font-size: 16px;
+          max-height: 200px;
+          color: $other-color;
+
+          @media (max-width: 420px) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .step__add {
+        background-color: $secondary-color;
+        padding: 4px 12px;
+        height: 40px;
+        border-radius: 5px;
+        color: $background-color;
+        font-weight: bold;
+        @include transition;
+        cursor: pointer;
+
+        @media (max-width: 420px) {
+          padding: 4px 8px;
+          height: 40px;
+        }
+
+        &:hover {
+          background-color: $secondary-color2;
+        }
+      }
+
+      .step__remove {
+        position: absolute;
+        left: -38px;
+        top: 6px;
+        background-color: $secondary-color2;
+        opacity: 0.8;
+        border-radius: 5px;
+        padding: 4px 8px;
+        @include transition;
+        cursor: pointer;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &-steps-add-step {
+        display: flex;
+
+        .step__counter,
+        .step__input {
+          opacity: 0.7;
+        }
+
+        .step__input textarea {
+          resize: none;
+        }
+      }
+
+      &-filter-options {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media (max-width: 768px) {
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
+        &-option {
+          margin: 10px 10px 0 10px;
+          p {
+            background-color: transparent;
+            border: 1px solid $other-color;
+            font-size: 14px;
+            border-radius: 10px;
+            @include firstFont;
+            @include transition;
+            padding: 6px 20px;
+            width: auto;
+            color: $primary-color;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $secondary-color;
+              color: $background-color;
+              border-color: $secondary-color;
+            }
+          }
+
+          input {
+            display: none;
+          }
+
+          input:checked ~ p {
+            background-color: $secondary-color;
+            color: $background-color;
+            border-color: $secondary-color;
+          }
+        }
+      }
+
+      &-filter-title {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 420px) {
+          padding: 0 10px;
+          text-align: center;
+        }
+      }
+
+      .number-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+          width: 100px;
+          text-align: end;
+        }
+
+        span {
+          color: $other-color;
+          @include firstFont;
+          font-size: 16px;
+          padding-left: 10px;
+        }
+      }
+
+      .tags-input {
+        display: flex;
+        justify-content: center;
+        input {
+          width: 60%;
+
+          @media (max-width: 768px) {
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
+          }
+        }
+      }
+
+      &-ingredients-ingredient,
+      &-ingredients-add-ingredient {
+        .step__input {
+          width: 100%;
+          input {
+            width: 100%;
+            height: 40px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid $secondary-color;
+            @include firstFont;
+            font-size: 16px;
+            color: $other-color;
+
+            @media (max-width: 420px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      &-image-figure {
+        width: 100%;
+        height: 400px;
+        border: 4px dashed $other-color;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+          height: 400px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+
+        p {
+          @include firstFont;
+          font-size: 20px;
+          color: $other-color;
+        }
+      }
+    }
+  }
+}
+
+.add-recipe__submit--button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+
+  span {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $background-color;
+    background-color: $secondary-color;
+    box-shadow: 0 3px 24px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    font-size: 20px;
+    @include firstFont;
+    @include transition;
+    cursor: pointer;
+
+    @media (max-width: 420px) {
+      height: 50px;
+      font-size: 18px;
+    }
+
+    &:hover {
+      background-color: $secondary-color2;
+    }
+  }
+
+  .cancel {
+    background-color: transparent !important;
+    border: 2px solid $other-color;
+    color: $other-color !important;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: $other-color !important;
+      color: $background-color !important;
+    }
+  }
+}
+
+.error__message {
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 10px;
+  z-index: 1;
+
+  &--block {
+    background-color: $secondary-color;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 16px;
+    padding: 10px;
+    color: $background-color;
+    @include firstFont;
+    @include transition;
+    opacity: 1;
+
+    @media (max-width: 420px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.mobile__ingredient-step--remove{
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

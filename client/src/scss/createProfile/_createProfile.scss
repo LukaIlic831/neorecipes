@@ -1,0 +1,110 @@
+.create-profile__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .create-profile__image {
+    padding-bottom: 20px;
+    &--figure {
+      width: 260px;
+      height: 260px;
+      border: 4px dashed $other-color;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      img{
+        border-radius: 50%;
+        width: 260px;
+        height: 260px;
+        object-fit: cover;
+      }
+
+      p{
+        color: $other-color;
+        @include firstFont;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .create-profile__desc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .create-profile__desc--block {
+    margin-top: 12px;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &-title {
+      @include secondFont;
+      color: $primary-color;
+      padding-bottom: 12px;
+      h1 {
+        font-size: 34px;
+      }
+    }
+
+    &-para {
+      @include firstFont;
+      font-size: 18px;
+      color: $other-color;
+      position: relative;
+
+      textarea {
+        background-color: transparent;
+        resize: none;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid $secondary-color;
+        @include firstFont;
+        font-size: 18px;
+        height: 300px;
+        color: $other-color;
+        padding-bottom: 20px;
+
+        @media (max-width: 768px) {
+          padding-bottom: 40px;
+          font-size: 16px;
+        }
+      }
+
+      span{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: $primary-color;
+      }
+    }
+
+    &-button {
+        padding-top: 20px;
+      span {
+        padding: 14px 40px;
+        color: $background-color;
+        background-color: $secondary-color;
+        box-shadow: 0 3px 24px rgb(0 0 0 / 10%);
+        border-radius: 5px;
+        @include firstFont;
+        @include transition;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary-color2;
+        }
+      }
+    }
+  }
+}

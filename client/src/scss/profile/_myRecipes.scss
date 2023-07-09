@@ -1,0 +1,116 @@
+.my-recipes__wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: grid;
+  flex-wrap: wrap;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 420px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .my-recipe {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &__image {
+      width: 100%;
+      height: 300px;
+
+      img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        @include transition;
+
+        &:hover {
+          transform: scale(1.2) rotate(-5deg);
+        }
+      }
+    }
+
+    &__desc {
+      width: 100%;
+      overflow: hidden;
+      background-color: $background-color;
+      z-index: 2;
+
+      &--para {
+        width: 100%;
+        padding: 6px 8px 0 8px;
+        h5 {
+          @include secondFont;
+          font-size: 20px;
+          word-break: break-all;
+        }
+      }
+    }
+
+    &__options {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      @include transition;
+      @include firstFont;
+
+      @media (max-width: 768px) {
+        opacity: 1;
+      }
+
+      &--option {
+        z-index: 12;
+        margin-bottom: 20px;
+
+        button {
+          font-size: 20px;
+          width: 120px;
+          padding: 10px 0;
+          background-color: $other-color;
+          color: $background-color;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          @include transition;
+
+          &:hover {
+            background-color: $other-color2;
+          }
+        }
+
+        &:last-child {
+          button {
+            background-color: $secondary-color;
+
+            &:hover {
+              background-color: $secondary-color2;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
