@@ -401,7 +401,7 @@ app.get("/api/user/:id", (req, res) => {
 });
 
 app.get("/api/latest-recipes", (req, res) => {
-  const sqlSelect = "select * from Recipe order by createDate desc;";
+  const sqlSelect = "select * from Recipe order by createDate asc;";
   db.query(sqlSelect, (err, result) => {
     if (err) {
       console.log(err);
